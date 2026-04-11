@@ -25,6 +25,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -33,8 +34,24 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const validateForm = () => {
+    if (password.trim().length < 8) {
+      setPasswordError('Mật khẩu phải có ít nhất 8 ký tự');
+      return false;
+    }
+    setPasswordError('');
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      setSnackbarMessage('Vui lòng sửa lỗi trước khi đăng nhập');
+      setSnackbarSeverity('error');
+      setOpenSnackbar(true);
+      return;
+    }
+
     try {
       const { data } = await api.post('/auth/login', { email, password });
       dispatch(setCredentials({ user: data, token: data.token }));
@@ -150,15 +167,27 @@ const Login = () => {
                 }}
               />
               <TextField
-                label="Mật khẩu"
+                label={
+                  <span>
+                    Mật khẩu <Box component="span" sx={{ color: 'error.main' }}>*</Box>
+                  </span>
+                }
+                InputLabelProps={{ required: false }}
                 type={showPassword ? "text" : "password"}
                 variant="outlined"
                 fullWidth
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  if (passwordError && e.target.value.trim().length >= 8) {
+                    setPasswordError('');
+                  }
+                }}
                 placeholder="Nhập mật khẩu của bạn"
                 margin="normal"
                 required
+                error={Boolean(passwordError)}
+                helperText={passwordError || 'Mật khẩu tối thiểu 8 ký tự'}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">

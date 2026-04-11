@@ -1,0 +1,6 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="10" fill="#7C4A28"/>
+  <path d="M18 10H22L28 26H29L35 10H39L45 26H46L52 10H56L48 32H44L38 16H37L31 32H27L18 10Z" fill="#F3E6DC"/>
+  <text x="62" y="25" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">VŨ AN</text>
+  <path d="M62 30H98" stroke="#F3E6DC" stroke-width="2" stroke-linecap="round"/>
+</svg>

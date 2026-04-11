@@ -28,6 +28,8 @@ const Register = () => {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agree, setAgree] = useState(false);
@@ -37,10 +39,35 @@ const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const validateForm = () => {
+    let isValid = true;
+
+    if (password.trim().length < 8) {
+      setPasswordError('Mật khẩu phải có ít nhất 8 ký tự');
+      isValid = false;
+    } else {
+      setPasswordError('');
+    }
+
+    if (confirmPassword.trim().length < 8) {
+      setConfirmPasswordError('Xác nhận mật khẩu phải có ít nhất 8 ký tự');
+      isValid = false;
+    } else {
+      setConfirmPasswordError('');
+    }
+
+    if (password.trim().length >= 8 && confirmPassword.trim().length >= 8 && password !== confirmPassword) {
+      setConfirmPasswordError('Mật khẩu xác nhận không khớp');
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setSnackbarMessage('Mật khẩu không khớp');
+    if (!validateForm()) {
+      setSnackbarMessage('Vui lòng sửa lỗi trước khi đăng ký');
       setSnackbarSeverity('error');
       setOpenSnackbar(true);
       return;
@@ -204,15 +231,31 @@ const Register = () => {
                 }}
               />
               <TextField
-                label="Mật khẩu"
+                label={
+                  <span>
+                    Mật khẩu <Box component="span" sx={{ color: 'error.main' }}>*</Box>
+                  </span>
+                }
+                InputLabelProps={{ required: false }}
                 type={showPassword ? "text" : "password"}
                 variant="outlined"
                 fullWidth
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  if (passwordError && e.target.value.trim().length >= 8) {
+                    setPasswordError('');
+                  }
+                  if (confirmPassword && confirmPassword === e.target.value) {
+                    setConfirmPasswordError('');
+                  }
+                }}
+                placeholder="Nhập mật khẩu (tối thiểu 8 ký tự)"
                 margin="normal"
                 required
+                error={Boolean(passwordError)}
+                helperText={passwordError || 'Mật khẩu tối thiểu 8 ký tự'}
+                inputProps={{ minLength: 8 }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -235,15 +278,31 @@ const Register = () => {
                 }}
               />
               <TextField
-                label="Xác nhận mật khẩu"
+                label={
+                  <span>
+                    Xác nhận mật khẩu <Box component="span" sx={{ color: 'error.main' }}>*</Box>
+                  </span>
+                }
+                InputLabelProps={{ required: false }}
                 type={showConfirmPassword ? "text" : "password"}
                 variant="outlined"
                 fullWidth
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={(e) => {
+                  setConfirmPassword(e.target.value);
+                  if (confirmPasswordError && e.target.value.trim().length >= 8) {
+                    setConfirmPasswordError('');
+                  }
+                  if (password && password === e.target.value) {
+                    setConfirmPasswordError('');
+                  }
+                }}
                 placeholder="Nhập lại mật khẩu"
                 margin="normal"
                 required
+                error={Boolean(confirmPasswordError)}
+                helperText={confirmPasswordError || 'Nhập lại mật khẩu để xác nhận'}
+                inputProps={{ minLength: 8 }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">

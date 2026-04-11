@@ -4,33 +4,80 @@ const About = () => {
   // Team members data
   const teamMembers = [
     {
-      name: 'Nguyễn Văn Minh',
-      position: 'Nhà sáng lập & CEO',
-      description: 'Với hơn 15 năm kinh nghiệm trong ngành nội thất cao cấp, anh Minh đã xây dựng Minh Khang thành thương hiệu uy tín hàng đầu.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      name: 'Hà Phương Linh',
+      position: 'Giám đốc điều hành',
+      description: 'Linh dẫn dắt đội ngũ với tầm nhìn chiến lược và định hướng phát triển đột phá, tạo nên những sản phẩm nội thất thời thượng.',
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
     {
-      name: 'Trần Thu Hà',
-      position: 'Giám đốc thiết kế',
-      description: 'Tốt nghiệp chuyên ngành Thiết kế nội thất tại Ý, chị Hà mang đến những ý tưởng thiết kế độc đáo và tinh tế.',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      name: 'Đỗ Minh Quân',
+      position: 'Trưởng phòng thiết kế sáng tạo',
+      description: 'Quân tạo ra những concept đậm chất sống, kết hợp phong cách và công năng cho mỗi công trình.',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
     {
-      name: 'Lê Quang Khang',
-      position: 'Trưởng phòng dịch vụ khách hàng',
-      description: 'Với phương châm "Khách hàng là trên hết", anh Khang luôn đảm bảo mỗi khách hàng đều nhận được trải nghiệm tốt nhất.',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      name: 'Phan Thanh Tùng',
+      position: 'Giám đốc trải nghiệm khách hàng',
+      description: 'Tùng đảm bảo khách hàng luôn nhận được hỗ trợ tận tâm và dịch vụ bàn giao hoàn chỉnh từng chi tiết.',
+      image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      name: 'Nguyễn Mỹ Linh',
+      position: 'Quản lý dự án',
+      description: 'Linh điều phối tiến độ thi công và giám sát chất lượng, đảm bảo mọi hạng mục đều hoàn thành đúng kỳ hạn.',
+      image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      name: 'Trần Hữu Phước',
+      position: 'Chuyên gia mua hàng',
+      description: 'Phước chọn lọc vật liệu cao cấp và giải pháp sản xuất tối ưu nhằm giữ chất lượng đồng đều cho mọi dự án.',
+      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    },
+    {
+      name: 'Lê Thanh Hòa',
+      position: 'Trưởng phòng kinh doanh',
+      description: 'Hòa xây dựng mối quan hệ bền vững với khách hàng và đảm bảo mọi yêu cầu đều được đáp ứng chuyên nghiệp.',
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
   ];
 
   // Milestone data
   const milestones = [
-    { year: '2010', event: 'Thành lập Shop Nội Thất Minh Khang tại TP.HCM' },
-    { year: '2015', event: 'Mở rộng showroom thứ hai tại Hà Nội' },
-    { year: '2018', event: 'Đạt chứng nhận "Thương hiệu nội thất xuất sắc"' },
-    { year: '2020', event: 'Ra mắt dòng sản phẩm eco-friendly từ vật liệu tái chế' },
-    { year: '2023', event: 'Mở rộng thị trường xuất khẩu sang các nước Đông Nam Á' },
-    { year: '2024', event: 'Kỷ niệm phục vụ hơn 50,000 khách hàng trên toàn quốc' },
+    { title: 'Khởi đầu', description: '2010 - Vũ An được thành lập với mục tiêu tạo ra những không gian sống tinh tế và hiện đại.' },
+    { title: 'Mở rộng trải nghiệm', description: '2015 - Khai trương showroom mới và triển khai thiết kế nội thất trọn gói cho căn hộ và văn phòng.' },
+    { title: 'Sáng tạo bền vững', description: '2018 - Ra mắt bộ sưu tập thân thiện với môi trường và lựa chọn vật liệu tái chế cao cấp.' },
+    { title: 'Chuỗi giải pháp', description: '2021 - Phát triển dịch vụ tư vấn phong cách sống, ánh sáng và bố cục nội thất toàn diện.' },
+    { title: 'Tin cậy khách hàng', description: '2024 - Hơn 50.000 khách hàng tin tưởng và hơn 2.000 dự án hoàn thiện trên toàn quốc.' },
+  ];
+
+  const partners = [
+    { name: 'Linea Decor', logo: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { name: 'MobiCraft', logo: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { name: 'UrbanNest', logo: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { name: 'Studio L', logo: 'https://images.unsplash.com/photo-1519222970733-f546218fa6d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { name: 'HomeCraft', logo: 'https://images.unsplash.com/photo-1472220625704-91e1462799b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { name: 'EcoLiving', logo: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Hà Thị An',
+      role: 'Kiến trúc sư nội thất',
+      content: 'Vũ An đã cùng tôi hoàn thiện một dự án căn hộ mẫu với tiêu chuẩn cao, đồng hành chuyên nghiệp và linh hoạt theo yêu cầu thiết kế.',
+      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      name: 'Tuấn Anh',
+      role: 'Chủ showroom thời trang',
+      content: 'Không gian trưng bày của tôi được thiết kế cực kỳ hiệu quả. Khách đến xem sản phẩm cảm nhận được sự sang trọng và gọn gàng ngay từ lần đầu.',
+      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      name: 'Ngọc Lan',
+      role: 'CEO startup công nghệ',
+      content: 'Dự án văn phòng mới của chúng tôi tạo nên một môi trường làm việc sáng tạo và ấm cúng. Dịch vụ chăm sóc khách hàng rất chu đáo và tận tâm.',
+      image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    },
   ];
 
   // Features/values data
@@ -63,18 +110,18 @@ const About = () => {
       <div className="relative">
         <div className="w-full h-[400px] overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
             alt="Không gian nội thất sang trọng"
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-transparent">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 to-transparent">
             <div className="container mx-auto h-full flex items-center px-4">
               <div className="max-w-md">
                 <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Giới thiệu</h1>
-                <div className="w-16 h-1 bg-yellow-400 mb-6"></div>
+                <div className="w-16 h-1 bg-brand mb-6"></div>
                 <p className="text-base md:text-lg text-white leading-relaxed">
-                  Hành trình kiến tạo không gian sống đẳng cấp cùng Shop Nội Thất Minh Khang
+                  Hành trình kiến tạo không gian sống đẳng cấp cùng Shop Nội Thất Vũ An
                 </p>
               </div>
             </div>
@@ -86,16 +133,16 @@ const About = () => {
       <div className="container mx-auto py-20 px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Về Shop Nội Thất Minh Khang</h2>
-            <div className="w-16 h-1 bg-blue-600 mb-6"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Về Shop Nội Thất Vũ An</h2>
+            <div className="w-16 h-1 bg-brand mb-6"></div>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-              Chào mừng bạn đến với <strong className="text-blue-600">Shop Nội Thất Minh Khang</strong> - điểm đến lý tưởng cho những ai yêu thích không gian sống hiện đại, sang trọng và tiện nghi. Thành lập từ năm 2010, chúng tôi tự hào là thương hiệu nội thất hàng đầu tại Việt Nam, mang đến những sản phẩm chất lượng cao, thiết kế tinh tế và dịch vụ tận tâm.
+              Chào mừng bạn đến với <strong className="text-brand-dark">Shop Nội Thất Vũ An</strong> - điểm đến lý tưởng cho những ai yêu thích không gian sống hiện đại, sang trọng và tiện nghi. Thành lập từ năm 2010, chúng tôi tự hào là thương hiệu nội thất hàng đầu tại Việt Nam, mang đến những sản phẩm chất lượng cao, thiết kế tinh tế và dịch vụ tận tâm.
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
               Với sứ mệnh "Biến ngôi nhà của bạn thành tổ ấm hoàn hảo", chúng tôi không ngừng nỗ lực để cung cấp các giải pháp nội thất phù hợp với mọi phong cách sống. Từ ghế sofa cao cấp, bàn ăn hiện đại đến giường ngủ sang trọng, mỗi sản phẩm đều được chọn lọc kỹ lưỡng để đáp ứng tiêu chuẩn cao nhất về thẩm mỹ và công năng.
             </p>
             <p className="text-gray-700 leading-relaxed text-lg">
-              Trải qua hơn một thập kỷ phát triển, Minh Khang đã phục vụ hơn 50.000 khách hàng trên toàn quốc, từ các căn hộ hiện đại đến biệt thự sang trọng và văn phòng doanh nghiệp. Chúng tôi tự hào là đối tác tin cậy trong việc kiến tạo không gian sống và làm việc hoàn hảo cho khách hàng.
+              Trải qua hơn một thập kỷ phát triển, Vũ An đã phục vụ hơn 50.000 khách hàng trên toàn quốc, từ các căn hộ hiện đại đến biệt thự sang trọng và văn phòng doanh nghiệp. Chúng tôi tự hào là đối tác tin cậy trong việc kiến tạo không gian sống và làm việc hoàn hảo cho khách hàng.
             </p>
           </div>
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
@@ -136,13 +183,13 @@ const About = () => {
       </div>
 
       {/* Values Section */}
-      <div className="bg-blue-50 py-20">
+      <div className="bg-brand-soft py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Giá trị cốt lõi</h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <div className="w-16 h-1 bg-brand mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Những giá trị cốt lõi tạo nên thương hiệu Minh Khang và sự khác biệt trong từng sản phẩm của chúng tôi
+              Những giá trị cốt lõi tạo nên thương hiệu Vũ An và sự khác biệt trong từng sản phẩm của chúng tôi
             </p>
           </div>
 
@@ -152,7 +199,7 @@ const About = () => {
                 key={index}
                 className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl mb-4">
+                <div className="w-12 h-12 rounded-full bg-brand-dark text-white flex items-center justify-center text-2xl mb-4">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{value.title}</h3>
@@ -166,33 +213,28 @@ const About = () => {
       {/* Timeline Section */}
       <div className="container mx-auto py-20 px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Hành trình phát triển</h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Hành trình tạo dựng</h2>
+          <div className="w-16 h-1 bg-brand mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Chặng đường phát triển và những cột mốc quan trọng của Shop Nội Thất Minh Khang
+            Năm giai đoạn quan trọng cho thấy cách Vũ An phát triển từ ý tưởng đến thương hiệu nội thất đầy uy tín.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
-          <div className="space-y-12">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center relative">
-                <div
-                  className={`md:w-1/2 ${
-                    index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:order-last'
-                  }`}
-                >
-                  <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <h3 className="text-xl font-bold text-blue-600 mb-2">{milestone.year}</h3>
-                    <p className="text-gray-700 text-base">{milestone.event}</p>
-                  </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {milestones.map((milestone, index) => (
+            <div key={index} className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.3em] text-brand-dark font-semibold">Giai đoạn {index + 1}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mt-3">{milestone.title}</h3>
                 </div>
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-blue-600 border-4 border-white"></div>
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}></div>
+                <div className="w-14 h-14 rounded-full bg-brand-light text-brand-dark flex items-center justify-center font-bold text-lg">
+                  {index + 1}
+                </div>
               </div>
-            ))}
-          </div>
+              <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -200,14 +242,14 @@ const About = () => {
       <div className="bg-gray-100 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Đội ngũ lãnh đạo</h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Đội ngũ nhiều gương mặt</h2>
+            <div className="w-16 h-1 bg-brand mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Gặp gỡ những người sáng lập và đội ngũ lãnh đạo tài năng đứng sau thành công của Shop Nội Thất Minh Khang
+              Một đội hình đa chuyên môn với những nhân sự am hiểu thiết kế, thi công và trải nghiệm khách hàng.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
@@ -221,7 +263,7 @@ const About = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-4">{member.position}</p>
+                  <p className="text-brand-dark font-medium mb-4">{member.position}</p>
                   <p className="text-gray-600 text-base">{member.description}</p>
                 </div>
               </div>
@@ -235,14 +277,14 @@ const About = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Showroom đẳng cấp</h2>
-            <div className="w-16 h-1 bg-blue-600 mb-6"></div>
+            <div className="w-16 h-1 bg-brand mb-6"></div>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-              Với hệ thống showroom rộng lớn trên toàn quốc, chúng tôi mang đến trải nghiệm mua sắm trực quan và tiện lợi nhất cho khách hàng. Mỗi showroom của Minh Khang đều được thiết kế như một ngôi nhà mẫu, giúp khách hàng dễ dàng hình dung được không gian sống lý tưởng của mình.
+              Với hệ thống showroom rộng lớn trên toàn quốc, chúng tôi mang đến trải nghiệm mua sắm trực quan và tiện lợi nhất cho khách hàng. Mỗi showroom của Vũ An đều được thiết kế như một ngôi nhà mẫu, giúp khách hàng dễ dàng hình dung được không gian sống lý tưởng của mình.
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">Hãy ghé thăm showroom của chúng tôi tại:</p>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <div className="bg-blue-600 text-white rounded-full p-1 mr-3 mt-1">
+                <div className="bg-brand-dark text-white rounded-full p-1 mr-3 mt-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
@@ -270,7 +312,7 @@ const About = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <div className="bg-blue-600 text-white rounded-full p-1 mr-3 mt-1">
+                <div className="bg-brand-dark text-white rounded-full p-1 mr-3 mt-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
@@ -298,7 +340,7 @@ const About = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <div className="bg-blue-600 text-white rounded-full p-1 mr-3 mt-1">
+                <div className="bg-brand-dark text-white rounded-full p-1 mr-3 mt-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
@@ -331,7 +373,7 @@ const About = () => {
             <div className="rounded-xl overflow-hidden shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Showroom Minh Khang"
+                alt="Showroom Vũ An"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -341,18 +383,18 @@ const About = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-blue-700 py-20">
+      <div className="bg-brand-dark py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Hãy cùng chúng tôi tạo nên không gian sống mơ ước
           </h2>
-          <p className="text-blue-100 mb-8 max-w-2xl mx-auto text-lg">
+          <p className="text-brand-light mb-8 max-w-2xl mx-auto text-lg">
             Đội ngũ chuyên viên tư vấn của chúng tôi luôn sẵn sàng hỗ trợ bạn trong việc lựa chọn sản phẩm phù hợp nhất với không gian và nhu cầu của bạn.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="tel:1900633305"
-              className="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center"
+              className="px-8 py-3 bg-white text-brand-dark font-bold rounded-lg hover:bg-brand-soft transition-colors flex items-center justify-center"
               aria-label="Gọi hotline 1900 633 305"
             >
               <svg
@@ -373,7 +415,7 @@ const About = () => {
             </a>
             <a
               href="mailto:noithat@gmail.com"
-              className="px-8 py-3 bg-yellow-400 text-blue-900 font-bold rounded-lg hover:bg-yellow-300 transition-colors flex items-center justify-center"
+              className="px-8 py-3 bg-brand text-brand-dark font-bold rounded-lg hover:bg-brand-dark transition-colors flex items-center justify-center"
               aria-label="Gửi email đến noithat@gmail.com"
             >
               <svg
@@ -400,24 +442,25 @@ const About = () => {
       <div className="container mx-auto py-20 px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Đối tác của chúng tôi</h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <div className="w-16 h-1 bg-brand mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Chúng tôi hợp tác với các thương hiệu hàng đầu trong ngành để mang đến những sản phẩm chất lượng nhất
+            Chúng tôi đồng hành cùng những thương hiệu nội thất, vật liệu và thiết kế hàng đầu để tạo ra giá trị toàn diện.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {[...Array(6)].map((_, index) => (
+          {partners.map((partner) => (
             <div
-              key={index}
-              className="bg-white p-4 rounded-xl shadow-lg flex items-center justify-center h-24"
+              key={partner.name}
+              className="bg-white p-4 rounded-xl shadow-lg flex flex-col items-center justify-center text-center h-32"
             >
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                alt={`Đối tác ${index + 1}`}
-                className="max-h-16 object-contain"
+                src={partner.logo}
+                alt={partner.name}
+                className="max-h-16 object-contain mb-3"
                 loading="lazy"
               />
+              <p className="text-sm text-gray-600 font-medium">{partner.name}</p>
             </div>
           ))}
         </div>
@@ -427,43 +470,24 @@ const About = () => {
       <div className="bg-gray-50 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Khách hàng nói gì về chúng tôi</h2>
-            <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Khách hàng nói gì</h2>
+            <div className="w-16 h-1 bg-brand mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Sự hài lòng của khách hàng luôn là thước đo cho thành công của chúng tôi
+              Những phản hồi thực tế từ khách hàng đã trải nghiệm dịch vụ và sản phẩm của chúng tôi.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Nguyễn Thị Mai',
-                role: 'Chủ căn hộ tại The Riviera Point',
-                content: 'Tôi rất hài lòng với bộ sofa mà Minh Khang đã tư vấn cho gia đình. Chất lượng sản phẩm tuyệt vời và dịch vụ vận chuyển, lắp đặt rất chuyên nghiệp.',
-                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-              },
-              {
-                name: 'Trần Minh Đức',
-                role: 'Giám đốc công ty ABC',
-                content: 'Chúng tôi đã chọn Minh Khang để thiết kế và trang bị nội thất cho toàn bộ văn phòng. Kết quả thật sự ấn tượng, không gian làm việc vừa hiện đại vừa thể hiện được văn hóa công ty.',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-              },
-              {
-                name: 'Lê Thanh Hương',
-                role: 'Khách hàng tại Hà Nội',
-                content: 'Đã hợp tác với Minh Khang trong việc trang trí nội thất cho ngôi nhà mới của gia đình. Đội ngũ thiết kế rất tận tâm, lắng nghe và đưa ra những gợi ý phù hợp với sở thích và ngân sách của chúng tôi.',
-                image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-              },
-            ].map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
-                key={index}
+                key={testimonial.name}
                 className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
+                    className="w-14 h-14 rounded-full mr-4 object-cover"
                     loading="lazy"
                   />
                   <div>
@@ -471,7 +495,7 @@ const About = () => {
                     <p className="text-sm text-gray-500">{testimonial.role}</p>
                   </div>
                 </div>
-                <div className="text-yellow-400 flex mb-4">
+                <div className="text-brand flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
@@ -493,11 +517,11 @@ const About = () => {
 
       {/* Newsletter Section */}
       <div className="container mx-auto py-20 px-4">
-        <div className="bg-blue-600 rounded-xl p-8 md:p-12 shadow-xl">
+        <div className="bg-brand-dark rounded-xl p-8 md:p-12 shadow-xl">
           <div className="md:flex items-center justify-between">
             <div className="mb-6 md:mb-0 md:mr-8">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Đăng ký nhận tin</h3>
-              <p className="text-blue-100 text-lg">
+              <p className="text-brand-light text-lg">
                 Hãy đăng ký để nhận thông tin về các sản phẩm mới, chương trình khuyến mãi và mẹo trang trí nội thất.
               </p>
             </div>
@@ -506,11 +530,11 @@ const About = () => {
                 <input
                   type="email"
                   placeholder="Email của bạn"
-                  className="px-4 py-3 rounded-l-lg w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-4 py-3 rounded-l-lg w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-brand"
                   aria-label="Nhập email để đăng ký nhận tin"
                 />
                 <button
-                  className="bg-yellow-400 text-blue-900 font-bold px-6 py-3 rounded-r-lg hover:bg-yellow-300 transition-colors"
+                  className="bg-brand text-brand-dark font-bold px-6 py-3 rounded-r-lg hover:bg-brand-dark transition-colors"
                   aria-label="Đăng ký nhận tin"
                 >
                   Đăng ký

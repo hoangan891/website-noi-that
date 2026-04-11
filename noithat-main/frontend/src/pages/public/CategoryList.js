@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPublicProducts, setCurrentPublicPage } from '../../redux/slices/productSlice';
 import api from '../../services/api'; // Ensure `api` is imported
@@ -7,7 +7,6 @@ import {
   Snackbar,
   Alert,
   TextField,
-  Switch,
   Button,
   Slider,
   Chip,
@@ -19,7 +18,6 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import FilterAltIcon from '@mui/icons-material/FilterAlt'; // Ensure `FilterAltIcon` is imported
 
@@ -38,9 +36,9 @@ const CategoryList = () => {
   // State for filters
   const [searchTerm, setSearchTerm] = useState('');
   const [priceRange, setPriceRange] = useState([0, 10000000]);
-  const [flashSale, setFlashSale] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [status, setStatus] = useState('');
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState('all');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [activeFiltersCount, setActiveFiltersCount] = useState(0);
@@ -66,19 +64,17 @@ const CategoryList = () => {
     if (searchTerm) filters.keyword = searchTerm;
     if (priceRange[0] > 0) filters['price[gte]'] = priceRange[0];
     if (priceRange[1] < 10000000) filters['price[lte]'] = priceRange[1];
-    if (flashSale) filters.isFlashSale = 'true';
     if (selectedCategory) filters.category = selectedCategory;
     if (status) filters.status = status;
 
     let count = 0;
     if (searchTerm) count++;
     if (priceRange[0] > 0 || priceRange[1] < 10000000) count++;
-    if (flashSale) count++;
     if (status) count++;
     setActiveFiltersCount(count);
 
     dispatch(fetchPublicProducts({ page: currentPublicPage, filters }));
-  }, [dispatch, currentPublicPage, searchTerm, priceRange, flashSale, selectedCategory, status]);
+  }, [dispatch, currentPublicPage, searchTerm, priceRange, selectedCategory, status]);
 
   useEffect(() => {
     if (activeTab !== 'all') {
@@ -87,6 +83,16 @@ const CategoryList = () => {
       setSelectedCategory('');
     }
   }, [activeTab]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const categoryQuery = params.get('category');
+    if (categoryQuery) {
+      setActiveTab(categoryQuery);
+      setSelectedCategory(categoryQuery);
+      dispatch(setCurrentPublicPage(1));
+    }
+  }, [location.search, dispatch]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -98,11 +104,6 @@ const CategoryList = () => {
     dispatch(setCurrentPublicPage(1));
   };
 
-  const handleFlashSaleChange = (event) => {
-    setFlashSale(event.target.checked);
-    dispatch(setCurrentPublicPage(1));
-  };
-
   const handleStatusChange = (value) => {
     setStatus(value);
     dispatch(setCurrentPublicPage(1));
@@ -111,7 +112,6 @@ const CategoryList = () => {
   const handleResetFilters = () => {
     setSearchTerm('');
     setPriceRange([0, 10000000]);
-    setFlashSale(false);
     setSelectedCategory('');
     setStatus('');
     setActiveTab('all');
@@ -322,27 +322,6 @@ const CategoryList = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="mb-6 bg-gradient-to-r from-red-50 to-red-100 p-4 rounded-lg border border-red-200">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <LocalFireDepartmentIcon sx={{ color: '#dc2626', marginRight: '8px' }} />
-                      <label className="text-gray-700 font-medium">Flash Sale</label>
-                    </div>
-                    <Switch
-                      checked={flashSale}
-                      onChange={handleFlashSaleChange}
-                      sx={{
-                        '& .MuiSwitch-switchBase.Mui-checked': { color: '#dc2626' },
-                        '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-                          backgroundColor: '#dc2626',
-                        },
-                      }}
-                      aria-label="Bật/tắt Flash Sale"
-                    />
-                  </div>
-                </div>
-
                 <div className="mb-6">
                   <label className="block text-gray-700 font-medium mb-2">Trạng thái</label>
                   <div className="flex flex-wrap gap-2">
@@ -442,11 +421,6 @@ const CategoryList = () => {
                             key={product._id}
                             className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
                           >
-                            {product.isFlashSale && (
-                              <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-br-lg">
-                                FLASH SALE
-                              </div>
-                            )}
                             <div className="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
                               <img
                                 src={product.image || 'https://via.placeholder.com/300'}
@@ -521,11 +495,6 @@ const CategoryList = () => {
                           key={product._id}
                           className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
                         >
-                          {product.isFlashSale && (
-                            <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-br-lg">
-                              FLASH SALE
-                            </div>
-                          )}
                           <div className="h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
                             <img
                               src={product.image || 'https://via.placeholder.com/300'}

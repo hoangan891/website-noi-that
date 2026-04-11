@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaHome, FaUser, FaShoppingCart, FaThList, FaSearch, FaChevronDown } from 'react-icons/fa';
 import { logout } from '../../redux/slices/authSlice';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo-vuan.svg';
 
 const Header = () => {
     const { user } = useSelector((state) => state.auth);
@@ -46,16 +46,19 @@ const Header = () => {
     }, [accountMenuRef]);
 
     return (
-        <header className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
+        <header className="bg-brand-soft/95 backdrop-blur-md sticky top-0 z-50 border-b border-brand-light shadow-sm">
             <div className="container mx-auto px-4 py-3">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <Link 
                         to="/" 
                         className="flex items-center transition-transform duration-300 hover:scale-105"
-                        aria-label="Trang chủ Minh Khang"
+                        aria-label="Trang chủ Vũ An"
                     >
-                        <img src={logo} alt="Minh Khang Logo" className="h-10 w-auto object-contain" />
+                        <img src={logo} alt="Logo Vũ An" className="h-10 w-auto object-contain" />
+                        <span className="hidden sm:inline ml-3 text-lg font-semibold tracking-wide text-[#5a4232]">
+                            VŨ AN
+                        </span>
                     </Link>
 
                     {/* Search bar - centralized and responsive */}
@@ -66,12 +69,12 @@ const Header = () => {
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 placeholder="Tìm kiếm sản phẩm..."
-                                className="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-gray-50 transition-all duration-300"
+                                className="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm bg-brand-soft transition-all duration-300"
                                 aria-label="Tìm kiếm sản phẩm"
                             />
                             <button 
                                 type="submit" 
-                                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500 transition-colors duration-300" 
+                                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-brand-dark transition-colors duration-300" 
                                 aria-label="Tìm kiếm"
                             >
                                 <FaSearch />
@@ -83,7 +86,7 @@ const Header = () => {
                     <nav className="flex items-center space-x-1 md:space-x-6">
                         {/* Mobile Search Button */}
                         <button 
-                            className="md:hidden p-2 text-gray-700 hover:text-blue-500 transition-colors duration-300"
+                            className="md:hidden p-2 text-gray-700 hover:text-brand-dark transition-colors duration-300"
                             onClick={() => navigate('/search')}
                             aria-label="Tìm kiếm"
                         >
@@ -93,7 +96,7 @@ const Header = () => {
                         {/* Home - show icon only on mobile */}
                         <Link 
                             to="/" 
-                            className="flex items-center p-2 text-gray-700 hover:text-blue-500 transition-colors duration-300 group"
+                            className="flex items-center p-2 text-gray-700 hover:text-brand-dark transition-colors duration-300 group"
                             title="Trang chủ"
                         >
                             <FaHome className="text-lg group-hover:scale-110 transition-transform duration-300" /> 
@@ -103,7 +106,7 @@ const Header = () => {
                         {/* Categories */}
                         <Link 
                             to="/categories" 
-                            className="flex items-center p-2 text-gray-700 hover:text-blue-500 transition-colors duration-300 group"
+                            className="flex items-center p-2 text-gray-700 hover:text-brand-dark transition-colors duration-300 group"
                             title="Danh mục sản phẩm"
                         >
                             <FaThList className="text-lg group-hover:scale-110 transition-transform duration-300" /> 
@@ -113,7 +116,7 @@ const Header = () => {
                         {/* About - hidden on small screens */}
                         <Link 
                             to="/about" 
-                            className="hidden sm:block p-2 text-gray-700 hover:text-blue-500 transition-colors duration-300 font-medium"
+                            className="hidden sm:block p-2 text-gray-700 hover:text-brand-dark transition-colors duration-300 font-medium"
                             title="Giới thiệu"
                         >
                             Giới thiệu
@@ -133,7 +136,7 @@ const Header = () => {
                         {/* Cart with improved animation and badge */}
                         <Link 
                             to="/cart" 
-                            className="relative p-2 text-gray-700 hover:text-blue-500 transition-colors duration-300 group"
+                            className="relative p-2 text-gray-700 hover:text-brand-dark transition-colors duration-300 group"
                             title="Giỏ hàng"
                         >
                             <FaShoppingCart className="text-xl group-hover:scale-110 transition-transform duration-300" />
@@ -148,7 +151,7 @@ const Header = () => {
                         <div className="relative" ref={accountMenuRef}>
                             <button
                                 onClick={toggleAccountMenu}
-                                className="flex items-center p-2 text-gray-700 hover:text-blue-500 transition-colors duration-300 group"
+                                className="flex items-center p-2 text-gray-700 hover:text-brand-dark transition-colors duration-300 group"
                                 aria-label="Tài khoản"
                                 aria-expanded={isAccountMenuOpen}
                                 aria-haspopup="true"
@@ -169,7 +172,7 @@ const Header = () => {
                                                 <Link 
                                                     to="/profile" 
                                                     onClick={() => setIsAccountMenuOpen(false)} 
-                                                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-brand-soft hover:text-brand-dark transition-colors duration-200"
                                                 >
                                                     <span className="w-5 mr-2">👤</span>
                                                     Hồ sơ cá nhân
@@ -177,7 +180,7 @@ const Header = () => {
                                                 <Link 
                                                     to="/orders" 
                                                     onClick={() => setIsAccountMenuOpen(false)} 
-                                                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                                    className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-brand-soft hover:text-brand-dark transition-colors duration-200"
                                                 >
                                                     <span className="w-5 mr-2">📦</span>
                                                     Đơn hàng của tôi
@@ -196,7 +199,7 @@ const Header = () => {
                                             <Link 
                                                 to="/login" 
                                                 onClick={() => setIsAccountMenuOpen(false)} 
-                                                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-brand-soft hover:text-brand-dark transition-colors duration-200"
                                             >
                                                 <span className="w-5 mr-2">🔑</span>
                                                 Đăng nhập
@@ -204,7 +207,7 @@ const Header = () => {
                                             <Link 
                                                 to="/register" 
                                                 onClick={() => setIsAccountMenuOpen(false)} 
-                                                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                                                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-brand-soft hover:text-brand-dark transition-colors duration-200"
                                             >
                                                 <span className="w-5 mr-2">✏️</span>
                                                 Đăng ký

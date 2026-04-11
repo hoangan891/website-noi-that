@@ -55,7 +55,7 @@ const SearchResults = () => {
         }
         // Nếu tìm kiếm xong và không có kết quả
         if (searchLoading === 'succeeded' && searchResults.length === 0 && keyword) {
-             return <div className="text-center text-gray-600 mt-6 p-4 bg-yellow-100 border border-yellow-400 rounded">Không tìm thấy sản phẩm nào phù hợp với từ khóa "{keyword}".</div>;
+             return <div className="text-center text-gray-600 mt-6 p-4 bg-brand-soft border border-brand rounded">Không tìm thấy sản phẩm nào phù hợp với từ khóa "{keyword}".</div>;
         }
         // Trường hợp mặc định (có thể là idle ban đầu khi có keyword nhưng chưa fetch xong)
         return null;
@@ -65,7 +65,7 @@ const SearchResults = () => {
         <div className="container mx-auto px-4 py-8 min-h-[calc(100vh-280px)]"> {/* Đảm bảo đủ chiều cao */}
             {keyword && (
                  <h1 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800 border-b pb-2">
-                    Kết quả tìm kiếm cho: <span className="text-primary">{keyword}</span>
+                    Kết quả tìm kiếm cho: <span className="text-brand-dark">{keyword}</span>
                 </h1>
             )}
             {renderContent()}

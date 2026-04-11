@@ -46,45 +46,21 @@ const Home = () => {
             try {
                 const { data } = await api.get('/products');
                 if (data && data.products && Array.isArray(data.products)) {
-                    const flashSaleProducts = data.products.filter((p) => p.isFlashSale === true);
-                    console.log("Dữ liệu từ API:", data.products);
-                    console.log("Sản phẩm Flash Sale:", flashSaleProducts);
-
-                    if (flashSaleProducts.length === 0) {
-                        console.warn("Không có sản phẩm Flash Sale nào được tìm thấy.");
-                        setSnackbarMessage('Không có sản phẩm Flash Sale nào.');
-                        setSnackbarSeverity('warning');
-                        setOpenSnackbar(true);
-                    } else {
-                        dispatch(setTopProducts(flashSaleProducts));
-                    }
+                    const featuredProducts = data.products.slice(0, 8);
+                    dispatch(setTopProducts(featuredProducts));
                 } else {
                     console.error("Invalid data format received:", data);
-                    setSnackbarMessage('Lỗi định dạng dữ liệu');
+                    setSnackbarMessage('Lỗi định dạng dữ liệu sản phẩm');
                     setSnackbarSeverity('error');
                     setOpenSnackbar(true);
-
-                    const mockFlashSaleProducts = [
-                        { _id: '1', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 1', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image1.jpg' },
-                        { _id: '2', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 2', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image2.jpg' },
-                        { _id: '3', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 3', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image3.jpg' },
-                        { _id: '4', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 4', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image4.jpg' },
-                    ];
-                    dispatch(setTopProducts(mockFlashSaleProducts));
+                    dispatch(setTopProducts([]));
                 }
             } catch (err) {
-                console.error("Failed to fetch or set top products:", err);
+                console.error("Failed to fetch top products:", err);
                 setSnackbarMessage('Không thể tải sản phẩm nổi bật');
                 setSnackbarSeverity('error');
                 setOpenSnackbar(true);
-
-                const mockFlashSaleProducts = [
-                    { _id: '1', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 1', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image1.jpg' },
-                    { _id: '2', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 2', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image2.jpg' },
-                    { _id: '3', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 3', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image3.jpg' },
-                    { _id: '4', name: 'Kệ đựng gia vị nhiệt tầng bằng inox 4', price: 3160000, oldPrice: 4000000, isFlashSale: true, image: 'path/to/image4.jpg' },
-                ];
-                dispatch(setTopProducts(mockFlashSaleProducts));
+                dispatch(setTopProducts([]));
             } finally {
                 setLoading(false);
             }
@@ -126,8 +102,8 @@ const Home = () => {
     };
 
     const bannerImages = [
-        { url: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', title: 'Không Gian Sống Đẳng Cấp', subtitle: 'Khám phá bộ sưu tập nội thất tinh tế, kiến tạo tổ ấm hoàn hảo.' },
-        { url: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', title: 'Thiết Kế Hiện Đại', subtitle: 'Nâng tầm không gian với đường nét tinh tế và công năng vượt trội.' },
+        { url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1740&q=80', title: 'Không Gian Sống Đẳng Cấp', subtitle: 'Khám phá bộ sưu tập nội thất tinh tế, kiến tạo tổ ấm hoàn hảo.' },
+        { url: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1740&q=80', title: 'Thiết Kế Hiện Đại', subtitle: 'Nâng tầm không gian với đường nét tinh tế và công năng vượt trội.' },
         { url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', title: 'Chất Liệu Cao Cấp', subtitle: 'Trải nghiệm sự khác biệt với những vật liệu được chọn lọc kỹ lưỡng.' },
     ];
 
@@ -135,28 +111,28 @@ const Home = () => {
         { 
             name: 'Nguyễn Thị Mai', 
             role: 'Khách hàng tại TP. HCM', 
-            comment: 'Tôi hoàn toàn hài lòng với bộ sofa mà Minh Khang cung cấp. Chất lượng sản phẩm vượt xa mong đợi, dịch vụ giao hàng và lắp đặt chuyên nghiệp.', 
+            comment: 'Tôi hoàn toàn hài lòng với bộ sofa mà Vũ An cung cấp. Chất lượng sản phẩm vượt xa mong đợi, dịch vụ giao hàng và lắp đặt chuyên nghiệp.', 
             rating: 5,
             image: userImage1 
         },
         { 
             name: 'Trần Văn Hoàng', 
             role: 'Chủ căn hộ tại Hà Nội', 
-            comment: 'Đã mua toàn bộ nội thất phòng ngủ tại Minh Khang và rất ưng ý. Thiết kế hiện đại, chất lượng tốt và giá cả hợp lý.', 
+            comment: 'Đã mua toàn bộ nội thất phòng ngủ tại Vũ An và rất ưng ý. Thiết kế hiện đại, chất lượng tốt và giá cả hợp lý.', 
             rating: 5,
             image: userImage2 
         },
         { 
             name: 'Lê Minh Tâm', 
             role: 'Nhà thiết kế nội thất', 
-            comment: 'Là một nhà thiết kế, tôi thường xuyên giới thiệu khách hàng đến Minh Khang vì sự đa dạng và chất lượng sản phẩm của họ.', 
+            comment: 'Là một nhà thiết kế, tôi thường xuyên giới thiệu khách hàng đến Vũ An vì sự đa dạng và chất lượng sản phẩm của họ.', 
             rating: 5,
             image: userImage3 
         },
     ];
 
     return (
-        <Box sx={{ bgcolor: '#FAFAFA' }}>
+        <Box sx={{ bgcolor: '#f3ede4' }}>
             {/* Logo and Banner Section */}
             <Box className="relative">
                 <Swiper
@@ -186,13 +162,13 @@ const Home = () => {
                                         height: '100%', 
                                         objectFit: 'cover', 
                                         display: 'block', 
-                                        filter: 'brightness(0.7)' 
+                                        filter: 'brightness(0.9)' 
                                     }} 
                                 />
                                 <Box sx={{ 
                                     position: 'absolute', 
                                     inset: 0, 
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.3))', 
+                                    background: 'linear-gradient(to top, rgba(90,47,24,0.45), rgba(90,47,24,0.12))', 
                                     display: 'flex', 
                                     flexDirection: 'column', 
                                     justifyContent: 'center', 
@@ -235,18 +211,18 @@ const Home = () => {
                                     </Typography>
                                     <MuiButton 
                                         component={Link} 
-                                        to="/categories" // Changed to static /categories
+                                        to="/categories" 
                                         variant="contained" 
-                                        color="primary" 
                                         size="large" 
                                         sx={{ 
-                                            fontWeight: 500, 
+                                            fontWeight: 600, 
                                             px: 6, 
-                                            py: 1.5, 
+                                            py: 1.75, 
                                             borderRadius: '0', 
-                                            background: '#D2B48C', 
-                                            '&:hover': { background: '#C19A6B' }, 
-                                            boxShadow: '0 4px 12px rgba(0,0,0,0.15)', 
+                                            background: '#5a2f18', 
+                                            color: '#fff', 
+                                            '&:hover': { background: '#4a2615' }, 
+                                            boxShadow: '0 8px 20px rgba(0,0,0,0.18)', 
                                             textTransform: 'none', 
                                             fontSize: '1.1rem' 
                                         }}
@@ -307,7 +283,7 @@ const Home = () => {
             </Box>
 
             {/* Collection Showcase Section */}
-            <Box sx={{ py: 8, bgcolor: '#FAFAFA' }}>
+            <Box sx={{ py: 8, bgcolor: '#f3ede4' }}>
                 <Container maxWidth="xl">
                     <Box sx={{ textAlign: 'center', mb: 6 }}>
                         <Typography variant="h2" component="h2" sx={{ 
@@ -446,7 +422,7 @@ const Home = () => {
                                                             variant="h6"
                                                             sx={{
                                                                 fontWeight: 700,
-                                                                color: 'error.main',
+                                                                color: '#5a2f18',
                                                                 mb: 2,
                                                             }}
                                                         >
@@ -460,11 +436,11 @@ const Home = () => {
                                                                 variant="outlined"
                                                                 size="small"
                                                                 sx={{
-                                                                    borderColor: 'error.main',
-                                                                    color: 'error.main',
+                                                                    borderColor: '#dc2626',
+                                                                    color: '#dc2626',
                                                                     '&:hover': {
-                                                                        borderColor: 'error.dark',
-                                                                        bgcolor: 'rgba(220, 38, 38, 0.1)',
+                                                                        borderColor: '#b91c1c',
+                                                                        bgcolor: 'rgba(220, 38, 38, 0.08)',
                                                                     },
                                                                     textTransform: 'none',
                                                                     fontWeight: 500,
@@ -479,10 +455,10 @@ const Home = () => {
                                                                 variant="contained"
                                                                 size="small"
                                                                 sx={{
-                                                                    bgcolor: 'error.main',
+                                                                    bgcolor: '#dc2626',
                                                                     color: 'white',
                                                                     '&:hover': {
-                                                                        bgcolor: 'error.dark',
+                                                                        bgcolor: '#b91c1c',
                                                                     },
                                                                     textTransform: 'none',
                                                                     fontWeight: 500,
@@ -513,149 +489,6 @@ const Home = () => {
                     )}
                 </Container>
             </Box>
-
-            {/* Flash Sale Section */}
-            {topProducts && topProducts.length > 0 && (
-                <Box sx={{ bgcolor: '#FFF8F0', py: 8 }}>
-                    <Container maxWidth="xl">
-                        <Box sx={{ textAlign: 'center', mb: 6 }}>
-                            <Typography variant="h6" component="p" sx={{ color: '#FF7043', fontWeight: 600, mb: 1, textTransform: 'uppercase', letterSpacing: '1.5px', fontSize: '0.875rem' }}>
-                                Flash Sale
-                            </Typography>
-                            <Typography variant="h2" component="h2" sx={{ fontWeight: 700, mb: 3, fontFamily: '"Playfair Display", serif', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '2.5rem' }, color: '#333' }}>
-                                Sản Phẩm Giảm Giá Sốc
-                            </Typography>
-                            <Divider sx={{ width: '100px', margin: '0 auto', borderColor: '#FF7043', borderWidth: 2, mt: 2, mb: 4 }} />
-                        </Box>
-                        <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
-                            {topProducts.map((product) => (
-                                <Grid key={product._id} item xs={12} sm={6} md={4} lg={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-                                    <Box
-                                        sx={{
-                                            width: '100%',
-                                            maxWidth: '280px',
-                                            bgcolor: 'white',
-                                            borderRadius: '8px',
-                                            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                                            overflow: 'hidden',
-                                            transition: 'transform 0.3s ease-in-out',
-                                            '&:hover': {
-                                                transform: 'translateY(-5px)',
-                                                boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
-                                            },
-                                        }}
-                                    >
-                                        <Box
-                                            sx={{
-                                                height: '200px',
-                                                bgcolor: 'gray.100',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                overflow: 'hidden',
-                                            }}
-                                        >
-                                            <img
-                                                src={product.image || 'https://via.placeholder.com/300'}
-                                                alt={product.name}
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'cover',
-                                                    transition: 'transform 0.3s ease-in-out',
-                                                }}
-                                            />
-                                        </Box>
-                                        <Box sx={{ p: 3 }}>
-                                            <Typography
-                                                variant="h6"
-                                                sx={{
-                                                    fontWeight: 600,
-                                                    color: '#333',
-                                                    mb: 1,
-                                                    textOverflow: 'ellipsis',
-                                                    overflow: 'hidden',
-                                                    whiteSpace: 'nowrap',
-                                                }}
-                                            >
-                                                {product.name}
-                                            </Typography>
-                                            <Typography
-                                                variant="body2"
-                                                sx={{
-                                                    color: '#666',
-                                                    mb: 2,
-                                                    textOverflow: 'ellipsis',
-                                                    overflow: 'hidden',
-                                                    whiteSpace: 'nowrap',
-                                                }}
-                                            >
-                                                {product.description}
-                                            </Typography>
-                                            <Typography
-                                                variant="h6"
-                                                sx={{
-                                                    fontWeight: 700,
-                                                    color: '#FF7043',
-                                                    mb: 2,
-                                                }}
-                                            >
-                                                {new Intl.NumberFormat('vi-VN', {
-                                                    style: 'currency',
-                                                    currency: 'VND',
-                                                }).format(product.price)}
-                                            </Typography>
-                                            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-                                                <MuiButton
-                                                    variant="outlined"
-                                                    size="small"
-                                                    sx={{
-                                                        borderColor: '#FF7043',
-                                                        color: '#FF7043',
-                                                        '&:hover': {
-                                                            borderColor: '#FF5722',
-                                                            bgcolor: 'rgba(255, 112, 67, 0.1)',
-                                                        },
-                                                        textTransform: 'none',
-                                                        fontWeight: 500,
-                                                        borderRadius: '4px',
-                                                        px: 2,
-                                                        py: 1,
-                                                    }}
-                                                    component={Link}
-                                                    to={`/product/${product._id}`}
-                                                >
-                                                    Xem Chi Tiết
-                                                </MuiButton>
-                                                <MuiButton
-                                                    variant="contained"
-                                                    size="small"
-                                                    sx={{
-                                                        bgcolor: '#FF7043',
-                                                        color: 'white',
-                                                        '&:hover': {
-                                                            bgcolor: '#FF5722',
-                                                        },
-                                                        textTransform: 'none',
-                                                        fontWeight: 500,
-                                                        borderRadius: '4px',
-                                                        px: 2,
-                                                        py: 1,
-                                                    }}
-                                                    component={Link}
-                                                    to={`/checkout?product=${product._id}`}
-                                                >
-                                                    Mua Ngay
-                                                </MuiButton>
-                                            </Box>
-                                        </Box>
-                                    </Box>
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </Container>
-                </Box>
-            )}
 
             {/* Highlight Product Section */}
             <Box sx={{ bgcolor: '#F0EAE0', py: 10 }}>
@@ -756,7 +589,7 @@ const Home = () => {
                                                     variant="h6"
                                                     sx={{
                                                         fontWeight: 700,
-                                                        color: 'error.main',
+                                                        color: '#5a2f18',
                                                         mb: 2,
                                                     }}
                                                 >
@@ -770,11 +603,11 @@ const Home = () => {
                                                         variant="outlined"
                                                         size="medium"
                                                         sx={{
-                                                            borderColor: '#D2B48C',
-                                                            color: '#D2B48C',
+                                                            borderColor: '#dc2626',
+                                                            color: '#dc2626',
                                                             '&:hover': {
-                                                                borderColor: '#C19A6B',
-                                                                bgcolor: 'rgba(210, 180, 140, 0.1)',
+                                                                borderColor: '#b91c1c',
+                                                                bgcolor: 'rgba(220, 38, 38, 0.1)',
                                                             },
                                                             textTransform: 'none',
                                                             fontWeight: 500,
@@ -791,10 +624,10 @@ const Home = () => {
                                                         variant="contained"
                                                         size="medium"
                                                         sx={{
-                                                            bgcolor: '#D2B48C',
+                                                            bgcolor: '#dc2626',
                                                             color: 'white',
                                                             '&:hover': {
-                                                                bgcolor: '#C19A6B',
+                                                                bgcolor: '#b91c1c',
                                                             },
                                                             textTransform: 'none',
                                                             fontWeight: 500,
@@ -916,7 +749,7 @@ const Home = () => {
                 <Container maxWidth="lg">
                     <Box sx={{ textAlign: 'center', mb: 8 }}>
                         <Typography variant="h6" component="p" sx={{ color: '#D2B48C', fontWeight: 600, mb: 1, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.875rem' }}> Giá Trị Cốt Lõi </Typography>
-                        <Typography variant="h2" component="h2" sx={{ fontWeight: 700, mb: 2, fontFamily: '"Playfair Display", serif', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '2.75rem' }, color: 'white' }}> Vì Sao Chọn Minh Khang? </Typography>
+                        <Typography variant="h2" component="h2" sx={{ fontWeight: 700, mb: 2, fontFamily: '"Playfair Display", serif', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '2.75rem' }, color: 'white' }}> Vì Sao Chọn Vũ An? </Typography>
                         <Divider sx={{ width: '80px', margin: '0 auto', borderColor: '#D2B48C', borderWidth: 2, mt: 2, mb: 4 }} />
                     </Box>
                     <Grid container spacing={4}>

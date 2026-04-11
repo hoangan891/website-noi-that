@@ -280,7 +280,7 @@ const ProductDetail = () => {
                 {[...Array(5)].map((_, i) => (
                   <FaStar
                     key={i}
-                    className={i < Math.round(product.rating || 0) ? 'text-yellow-400' : 'text-gray-300'}
+                    className={i < Math.round(product.rating || 0) ? 'text-brand' : 'text-gray-300'}
                     size={20}
                   />
                 ))}
@@ -430,7 +430,7 @@ const ProductDetail = () => {
                     <div className="text-5xl font-bold text-indigo-600">{product.rating?.toFixed(1) || "0.0"}</div>
                     <div className="flex justify-center my-2">
                       {[...Array(5)].map((_, i) => (
-                        <FaStar key={i} className={i < Math.round(product.rating || 0) ? 'text-yellow-400' : 'text-gray-300'} size={20} />
+                        <FaStar key={i} className={i < Math.round(product.rating || 0) ? 'text-brand' : 'text-gray-300'} size={20} />
                       ))}
                     </div>
                     <div className="text-sm text-gray-500">{reviews.length} đánh giá</div>
@@ -443,7 +443,7 @@ const ProductDetail = () => {
                         <div key={star} className="flex items-center">
                           <div className="w-12 text-sm text-gray-600">{star} sao</div>
                           <div className="flex-1 mx-4 h-3 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-yellow-400 rounded-full" style={{ width: `${percentage}%` }} />
+                            <div className="h-full bg-brand rounded-full" style={{ width: `${percentage}%` }} />
                           </div>
                           <div className="w-16 text-xs text-gray-500">{count} ({percentage.toFixed(0)}%)</div>
                         </div>
@@ -468,9 +468,9 @@ const ProductDetail = () => {
                           className="text-2xl mr-2 focus:outline-none"
                         >
                           {star <= userReview.rating ? (
-                            <FaStar className="text-yellow-400" />
+                            <FaStar className="text-brand" />
                           ) : (
-                            <FaRegStar className="text-gray-300 hover:text-yellow-400" />
+                            <FaRegStar className="text-gray-300 hover:text-brand" />
                           )}
                         </button>
                       ))}
@@ -515,7 +515,7 @@ const ProductDetail = () => {
                               {[...Array(5)].map((_, i) => (
                                 <FaStar
                                   key={i}
-                                  className={i < Math.round(review.rating) ? 'text-yellow-400' : 'text-gray-300'}
+                                  className={i < Math.round(review.rating) ? 'text-brand' : 'text-gray-300'}
                                   size={14}
                                 />
                               ))}

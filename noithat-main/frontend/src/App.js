@@ -15,6 +15,9 @@ import CategoryList from './pages/public/CategoryList';
 import ProductDetail from './pages/public/ProductDetail';
 import Cart from './pages/public/Cart';
 import About from './pages/public/About';
+import Contact from './pages/public/Contact';
+import Blogs from './pages/public/Blogs';
+import Promotion from './pages/public/Promotion';
 import SearchResults from './pages/public/SearchResults';
 import Checkout from './pages/public/Checkout';
 import OrderSuccess from './pages/public/OrderSuccess';
@@ -73,6 +76,9 @@ const App = () => {
           <Route path="/product/:idOrSlug" element={<DefaultLayout><ProductDetail /></DefaultLayout>} />
           <Route path="/cart" element={<DefaultLayout><Cart /></DefaultLayout>} />
           <Route path="/about" element={<DefaultLayout><About /></DefaultLayout>} />
+          <Route path="/contact" element={<DefaultLayout><Contact /></DefaultLayout>} />
+          <Route path="/blogs" element={<DefaultLayout><Blogs /></DefaultLayout>} />
+          <Route path="/promotion" element={<DefaultLayout><Promotion /></DefaultLayout>} />
           <Route path="/search" element={<DefaultLayout><SearchResults /></DefaultLayout>} />
           <Route path="/checkout" element={<DefaultLayout><ProtectedRoute><Checkout /></ProtectedRoute></DefaultLayout>} />
           <Route path="/order-success/:orderId" element={<DefaultLayout><ProtectedRoute><OrderSuccess /></ProtectedRoute></DefaultLayout>} />

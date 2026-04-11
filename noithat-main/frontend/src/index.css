@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --brand: #7c4a28;
+  --brand-dark: #5a2f18;
+  --brand-light: #f2e6dc;
+  --brand-soft: #f3ede4;
+  --brand-muted: #a87c61;
+}
+
+@layer utilities {
+  .bg-brand { background-color: var(--brand); }
+  .bg-brand-dark { background-color: var(--brand-dark); }
+  .bg-brand-light { background-color: var(--brand-light); }
+  .bg-brand-soft { background-color: var(--brand-soft); }
+  .text-brand { color: var(--brand); }
+  .text-brand-dark { color: var(--brand-dark); }
+  .text-brand-light { color: var(--brand-light); }
+  .text-brand-muted { color: var(--brand-muted); }
+  .border-brand { border-color: var(--brand); }
+  .border-brand-dark { border-color: var(--brand-dark); }
+  .ring-brand { ring-color: var(--brand); }
+}

@@ -122,7 +122,7 @@ const Checkout = () => {
 
   const validateDiscountCode = () => {
     console.log('Validating discount code:', discountCode);
-    if (discountCode.toLowerCase() === 'minhkhang10') {
+    if (discountCode.toLowerCase() === 'vuan10') {
       setIsDiscountValid(true);
       setShowDiscountConfirm(true);
       setSnackbarMessage('Mã giảm giá hợp lệ! Vui lòng xác nhận để áp dụng.');

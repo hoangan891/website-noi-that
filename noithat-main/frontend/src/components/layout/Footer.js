@@ -20,12 +20,12 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-orange-100 to-orange-200 text-gray-700">
+    <footer className="bg-gradient-to-r from-[#f4ede5] to-[#ede3d6] text-[#4f3e32]">
       {/* Services Section */}
       <div className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="flex items-center transition-all duration-300 hover:text-green-600 group">
-            <div className="mr-4 p-3 bg-orange-300 rounded-full text-orange-700 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+          <div className="flex items-center transition-all duration-300 hover:text-[#7c5a3a] group">
+            <div className="mr-4 p-3 bg-[#d8b89e] rounded-full text-[#5f422f] group-hover:bg-[#856b57] group-hover:text-white transition-all duration-300">
               <FaTruck className="text-2xl" />
             </div>
             <div>
@@ -34,8 +34,8 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex items-center transition-all duration-300 hover:text-green-600 group">
-            <div className="mr-4 p-3 bg-orange-300 rounded-full text-orange-700 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+          <div className="flex items-center transition-all duration-300 hover:text-brand-dark group">
+            <div className="mr-4 p-3 bg-brand-light rounded-full text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-all duration-300">
               <FaUndo className="text-2xl" />
             </div>
             <div>
@@ -44,8 +44,8 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex items-center transition-all duration-300 hover:text-green-600 group">
-            <div className="mr-4 p-3 bg-orange-300 rounded-full text-orange-700 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+          <div className="flex items-center transition-all duration-300 hover:text-brand-dark group">
+            <div className="mr-4 p-3 bg-brand-light rounded-full text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-all duration-300">
               <FaCreditCard className="text-2xl" />
             </div>
             <div>
@@ -54,8 +54,8 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex items-center transition-all duration-300 hover:text-green-600 group">
-            <div className="mr-4 p-3 bg-orange-300 rounded-full text-orange-700 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
+          <div className="flex items-center transition-all duration-300 hover:text-brand-dark group">
+            <div className="mr-4 p-3 bg-brand-light rounded-full text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-all duration-300">
               <FaHeadset className="text-2xl" />
             </div>
             <div>
@@ -67,12 +67,12 @@ const Footer = () => {
       </div>
       
       {/* Main Footer */}
-      <div className="border-t border-orange-300">
+      <div className="border-t border-brand-light">
         <div className="container mx-auto py-10 px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* About */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-orange-600">Về chúng tôi</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#7c5a3a]">Về chúng tôi</h3>
               <p className="text-sm mb-4 leading-relaxed">
                 Chúng tôi cung cấp các sản phẩm nội thất cao cấp với chất lượng tốt nhất, đem lại không gian sống hoàn hảo cho ngôi nhà của bạn.
               </p>
@@ -114,41 +114,41 @@ const Footer = () => {
             
             {/* Quick Links */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-orange-600">Liên kết nhanh</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#7c5a3a]">Liên kết nhanh</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
+                  <Link to="/" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
                     Trang chủ
                   </Link>
                 </li>
                 <li>
-                  <Link to="/categories" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
+                  <Link to="/categories" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
                     Sản phẩm
                   </Link>
                 </li>
                 <li>
-                  <Link to="/promotion" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
+                  <Link to="/promotion" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
                     Khuyến mãi
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
+                  <Link to="/about" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
                     Giới thiệu
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
+                  <Link to="/contact" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
                     Liên hệ
                   </Link>
                 </li>
                 <li>
-                  <Link to="/blogs" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
+                  <Link to="/blogs" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
                     Tin tức
                   </Link>
                 </li>
@@ -157,42 +157,30 @@ const Footer = () => {
             
             {/* Categories */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-orange-600">Danh mục sản phẩm</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#7c5a3a]">Danh mục sản phẩm</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/categories/phong-khach" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
-                    Phòng khách
+                  <Link to="/categories?category=sofa" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
+                    Sofa
                   </Link>
                 </li>
                 <li>
-                  <Link to="/categories/phong-ngu" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
-                    Phòng ngủ
+                  <Link to="/categories?category=ban-an" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
+                    Bàn ăn
                   </Link>
                 </li>
                 <li>
-                  <Link to="/categories/phong-bep" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
-                    Phòng bếp
+                  <Link to="/categories?category=giuong" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
+                    Giường
                   </Link>
                 </li>
                 <li>
-                  <Link to="/categories/phong-lam-viec" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
-                    Phòng làm việc
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/categories/ngoai-that" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
-                    Ngoại thất
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/categories/do-trang-tri" className="text-gray-700 hover:text-green-600 transition-colors duration-300 flex items-center">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full mr-2 transition-all duration-300 hover:bg-green-500"></span>
-                    Đồ trang trí
+                  <Link to="/categories?category=ke" className="text-gray-700 hover:text-brand-dark transition-colors duration-300 flex items-center">
+                    <span className="w-2 h-2 bg-brand rounded-full mr-2 transition-all duration-300 hover:bg-brand-dark"></span>
+                    Kệ
                   </Link>
                 </li>
               </ul>
@@ -200,22 +188,22 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-orange-600">Thông tin liên hệ</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#7c5a3a]">Thông tin liên hệ</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <FaMapMarkerAlt className="mt-1 mr-3 text-orange-500" />
+                  <FaMapMarkerAlt className="mt-1 mr-3 text-brand-dark" />
                   <span className="text-sm">123 Đường Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</span>
                 </li>
                 <li className="flex items-center">
-                  <FaPhoneAlt className="mr-3 cape text-orange-500" />
+                  <FaPhoneAlt className="mr-3 cape text-brand-dark" />
                   <span className="text-sm">1900 633 305</span>
                 </li>
                 <li className="flex items-center">
-                  <FaEnvelope className="mr-3 text-orange-500" />
+                  <FaEnvelope className="mr-3 text-brand-dark" />
                   <span className="text-sm">noithat@gmail.com</span>
                 </li>
                 <li className="flex items-center">
-                  <FaClock className="mr-3 text-orange-500" />
+                  <FaClock className="mr-3 text-brand-dark" />
                   <span className="text-sm">Thứ 2 - Chủ nhật: 8:00 - 22:00</span>
                 </li>
               </ul>
@@ -225,15 +213,15 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-orange-50 py-4 border-t border-orange-200">
+      <div className="bg-brand-soft py-4 border-t border-brand-light">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-600 mb-2 md:mb-0">
-            © {new Date().getFullYear()} Nội Thất Cao Cấp. Tất cả các quyền được bảo lưu.
+          <p className="text-sm text-[#5f4a3f] mb-2 md:mb-0">
+            © {new Date().getFullYear()} Nội Thất Vũ An. Tất cả các quyền được bảo lưu.
           </p>
           <div className="flex space-x-4 items-center">
-            <FaCcVisa className="text-blue-700 text-2xl" />
-            <FaCcMastercard className="text-red-600 text-2xl" />
-            <FaCcPaypal className="text-blue-800 text-2xl" />
+            <FaCcVisa className="text-brand-dark text-2xl" />
+            <FaCcMastercard className="text-brand text-2xl" />
+            <FaCcPaypal className="text-brand-dark text-2xl" />
           </div>
         </div>
       </div>

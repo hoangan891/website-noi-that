@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => {
         >
             {/* Flash Sale Badge */}
             {isFlashSaleActive && (
-                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-red-600 to-red-700 text-white text-center py-2 z-10">
+                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-brand-dark to-brand text-white text-center py-2 z-10">
                     <Typography variant="body2" className="font-bold tracking-wide">
                         FLASH SALE GIÁ SỐC
                     </Typography>
@@ -94,7 +94,7 @@ const ProductCard = ({ product }) => {
                         <Typography
                             variant="h6"
                             color="text.primary"
-                            className="font-bold text-red-600"
+                            className="font-bold text-brand-dark"
                             style={{ fontFamily: 'Roboto, sans-serif' }}
                         >
                             {discountedPrice.toLocaleString()}đ
@@ -122,14 +122,14 @@ const ProductCard = ({ product }) => {
                     <div className="mt-2">
                         <Typography
                             variant="body2"
-                            className="text-orange-600 font-semibold"
+                            className="text-brand-dark font-semibold"
                             style={{ fontFamily: 'Roboto, sans-serif' }}
                         >
                             Kết thúc sau: {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
                         </Typography>
                         <Typography
                             variant="body2"
-                            className="text-white font-semibold mt-1 bg-orange-500 rounded-full px-3 py-1 inline-block"
+                            className="text-white font-semibold mt-1 bg-brand-dark rounded-full px-3 py-1 inline-block"
                             style={{ fontFamily: 'Roboto, sans-serif' }}
                         >
                             Còn {product.remainingFlashSaleSlots}/{product.totalFlashSaleSlots} suất
@@ -172,10 +172,16 @@ const ProductCard = ({ product }) => {
                     component={Link}
                     to={`/product/${product.slug || product._id}`}
                     variant="contained"
-                    color="primary"
                     size="small"
-                    className="bg-blue-600 hover:bg-blue-700"
-                    style={{ fontFamily: 'Roboto, sans-serif', textTransform: 'none' }}
+                    sx={{
+                        backgroundColor: '#dc2626',
+                        color: '#fff',
+                        '&:hover': {
+                            backgroundColor: '#b91c1c',
+                        },
+                        textTransform: 'none',
+                        fontFamily: 'Roboto, sans-serif',
+                    }}
                 >
                     Mua ngay
                 </Button>

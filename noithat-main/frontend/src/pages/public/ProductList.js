@@ -4,7 +4,7 @@ import { fetchPublicProducts, setCurrentPublicPage } from '../../redux/slices/pr
 import { setCart } from '../../redux/slices/cartSlice';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
-import { Typography, TextField, Select, MenuItem, FormControl, InputLabel, Button, Grid, Box, Pagination, Checkbox, FormControlLabel, Paper } from '@mui/material';
+import { Typography, TextField, Select, MenuItem, FormControl, InputLabel, Button, Grid, Box, Pagination, Paper } from '@mui/material';
 import api from '../../services/api';
 import { FaShoppingCart } from 'react-icons/fa';
 
@@ -14,11 +14,10 @@ const ProductList = () => {
     const { user } = useSelector((state) => state.auth);
     const [categories, setCategories] = useState([]);
     const [filters, setFilters] = useState({
-        keyword: '',
+            keyword: '',
         category: '',
         sortBy: 'latest',
         price: { gte: '', lte: '' },
-        isFlashSale: false,
         status: '',
     });
     const [localCurrentPage, setLocalCurrentPage] = useState(currentPage);
@@ -46,7 +45,6 @@ const ProductList = () => {
         if (filters.category) activeFilters.category = filters.category;
         if (filters.price.gte) activeFilters['price[gte]'] = filters.price.gte;
         if (filters.price.lte) activeFilters['price[lte]'] = filters.price.lte;
-        if (filters.isFlashSale) activeFilters.isFlashSale = 'true';
         if (filters.status) activeFilters.status = filters.status;
         if (filters.sortBy) activeFilters.sortBy = filters.sortBy;
 
@@ -73,17 +71,12 @@ const ProductList = () => {
         }
     };
 
-    const handleFlashSaleChange = (event) => {
-        handleFilterChange('isFlashSale', event.target.checked);
-    };
-
     const handleClearFilters = () => {
         setFilters({
             keyword: '',
             category: '',
             sortBy: 'latest',
             price: { gte: '', lte: '' },
-            isFlashSale: false,
             status: '',
         });
         setLocalCurrentPage(1);
@@ -208,11 +201,6 @@ const ProductList = () => {
                                 <MenuItem value="New Arrival">Hàng mới về</MenuItem>
                             </Select>
                         </FormControl>
-                        <FormControlLabel
-                            control={<Checkbox checked={filters.isFlashSale} onChange={handleFlashSaleChange} name="flashSale" color="primary" />}
-                            label="Đang Flash Sale"
-                            sx={{ mb: 2 }}
-                        />
                         <Button variant="outlined" color="secondary" fullWidth onClick={handleClearFilters} sx={{ textTransform: 'none' }}>
                             Xóa bộ lọc
                         </Button>
