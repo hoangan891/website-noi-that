@@ -102,9 +102,9 @@ const Home = () => {
     };
 
     const bannerImages = [
-        { url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1740&q=80', title: 'Không Gian Sống Đẳng Cấp', subtitle: 'Khám phá bộ sưu tập nội thất tinh tế, kiến tạo tổ ấm hoàn hảo.' },
-        { url: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1740&q=80', title: 'Thiết Kế Hiện Đại', subtitle: 'Nâng tầm không gian với đường nét tinh tế và công năng vượt trội.' },
-        { url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', title: 'Chất Liệu Cao Cấp', subtitle: 'Trải nghiệm sự khác biệt với những vật liệu được chọn lọc kỹ lưỡng.' },
+        { url: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1740&q=80', title: 'Không Gian Tinh Tế Hàng Ngày', subtitle: 'Thiết kế nội thất tiện nghi, tạo không gian ấm cúng và đầy cá tính.' },
+        { url: 'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1740&q=80', title: 'Phong Cách Sang Trọng', subtitle: 'Mang đến vẻ đẹp vừa đẳng cấp vừa thoải mái cho mọi phòng.' },
+        { url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80', title: 'Vật Liệu Lựa Chọn', subtitle: 'Chất lượng bền bỉ cùng cảm giác chạm mềm mại, tinh tế từng chi tiết.' },
     ];
 
     const testimonials = [
@@ -227,7 +227,7 @@ const Home = () => {
                                             fontSize: '1.1rem' 
                                         }}
                                     > 
-                                        Khám Phá Ngay 
+                                        Xem Bộ Sưu Tập 
                                     </MuiButton>
                                 </Box>
                             </Box>
