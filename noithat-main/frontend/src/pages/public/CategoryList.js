@@ -45,6 +45,11 @@ const CategoryList = () => {
 
   const statuses = ['In Stock', 'Out of Stock', 'New Arrival'];
 
+  // Scroll to top when location/URL changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.search]);
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {

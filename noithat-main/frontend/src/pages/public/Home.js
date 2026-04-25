@@ -745,33 +745,84 @@ const Home = () => {
             </Container>
 
             {/* Value Proposition Section */}
-            <Box sx={{ bgcolor: '#122340', color: 'white', py: 10 }}>
+            <Box sx={{ bgcolor: '#F5E6D3', color: '#333', py: 12 }}>
                 <Container maxWidth="lg">
-                    <Box sx={{ textAlign: 'center', mb: 8 }}>
-                        <Typography variant="h6" component="p" sx={{ color: '#D2B48C', fontWeight: 600, mb: 1, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.875rem' }}> Giá Trị Cốt Lõi </Typography>
-                        <Typography variant="h2" component="h2" sx={{ fontWeight: 700, mb: 2, fontFamily: '"Playfair Display", serif', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '2.75rem' }, color: 'white' }}> Vì Sao Chọn Vũ An? </Typography>
-                        <Divider sx={{ width: '80px', margin: '0 auto', borderColor: '#D2B48C', borderWidth: 2, mt: 2, mb: 4 }} />
+                    <Box sx={{ textAlign: 'center', mb: 10 }}>
+                        <Typography variant="h6" component="p" sx={{ color: '#8B6F47', fontWeight: 600, mb: 1, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.875rem' }}> Ưu Điểm Nổi Bật </Typography>
+                        <Typography variant="h2" component="h2" sx={{ fontWeight: 700, mb: 2, fontFamily: '"Playfair Display", serif', fontSize: { xs: '1.75rem', sm: '2.25rem', md: '2.75rem' }, color: '#2c2c2c' }}> Tại Sao Tin Tưởng Vũ An? </Typography>
+                        <Divider sx={{ width: '80px', margin: '0 auto', borderColor: '#8B6F47', borderWidth: 2, mt: 2, mb: 4 }} />
                     </Box>
-                    <Grid container spacing={4}>
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ textAlign: 'center', p: 3 }}>
-                                <Box sx={{ fontSize: 50, color: '#D2B48C', mb: 3 }}>🌟</Box>
-                                <Typography variant="h5" component="h3" sx={{ fontWeight: 600, mb: 2, color: 'white' }}> Chất Lượng Vượt Trội </Typography>
-                                <Typography sx={{ color: '#CCC', lineHeight: 1.8 }}> Cam kết sử dụng vật liệu cao cấp từ các nguồn uy tín trên thế giới, quy trình sản xuất nghiêm ngặt và kiểm soát chất lượng toàn diện. </Typography>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Box sx={{ 
+                                textAlign: 'center', 
+                                p: 4, 
+                                bgcolor: 'white', 
+                                borderRadius: '8px', 
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-8px)',
+                                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                                }
+                            }}>
+                                <Box sx={{ fontSize: 60, mb: 3 }}>✨</Box>
+                                <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 2, color: '#8B6F47', fontSize: '1.1rem' }}> Vật Liệu Cao Cấp </Typography>
+                                <Typography sx={{ color: '#666', lineHeight: 1.8, fontSize: '0.95rem' }}> Lựa chọn gỗ tự nhiên, da thật và vải nhập khẩu từ các nước xuất khẩu hàng đầu thế giới. </Typography>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ textAlign: 'center', p: 3 }}>
-                                <Box sx={{ fontSize: 50, color: '#D2B48C', mb: 3 }}>🎨</Box>
-                                <Typography variant="h5" component="h3" sx={{ fontWeight: 600, mb: 2, color: 'white' }}> Thiết Kế Đẳng Cấp </Typography>
-                                <Typography sx={{ color: '#CCC', lineHeight: 1.8 }}> Đội ngũ thiết kế giàu kinh nghiệm, không ngừng cập nhật xu hướng mới nhất, sáng tạo những sản phẩm độc đáo và tinh tế. </Typography>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Box sx={{ 
+                                textAlign: 'center', 
+                                p: 4, 
+                                bgcolor: 'white', 
+                                borderRadius: '8px', 
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-8px)',
+                                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                                }
+                            }}>
+                                <Box sx={{ fontSize: 60, mb: 3 }}>🎯</Box>
+                                <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 2, color: '#8B6F47', fontSize: '1.1rem' }}> Thiết Kế Tinh Tế </Typography>
+                                <Typography sx={{ color: '#666', lineHeight: 1.8, fontSize: '0.95rem' }}> Kết hợp phong cách hiện đại với tính thực dụng, mỗi sản phẩm là tác phẩm nghệ thuật. </Typography>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} md={4}>
-                            <Box sx={{ textAlign: 'center', p: 3 }}>
-                                <Box sx={{ fontSize: 50, color: '#D2B48C', mb: 3 }}>🚚</Box>
-                                <Typography variant="h5" component="h3" sx={{ fontWeight: 600, mb: 2, color: 'white' }}> Dịch Vụ Tận Tâm </Typography>
-                                <Typography sx={{ color: '#CCC', lineHeight: 1.8 }}> Tư vấn chuyên nghiệp, giao hàng nhanh chóng, lắp đặt tận nơi và chế độ bảo hành uy tín giúp khách hàng an tâm tuyệt đối. </Typography>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Box sx={{ 
+                                textAlign: 'center', 
+                                p: 4, 
+                                bgcolor: 'white', 
+                                borderRadius: '8px', 
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-8px)',
+                                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                                }
+                            }}>
+                                <Box sx={{ fontSize: 60, mb: 3 }}>🛡️</Box>
+                                <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 2, color: '#8B6F47', fontSize: '1.1rem' }}> Bảo Hành Uy Tín </Typography>
+                                <Typography sx={{ color: '#666', lineHeight: 1.8, fontSize: '0.95rem' }}> Hỗ trợ bảo hành toàn diện, bảo trì định kỳ miễn phí trong 5 năm đầu. </Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={3}>
+                            <Box sx={{ 
+                                textAlign: 'center', 
+                                p: 4, 
+                                bgcolor: 'white', 
+                                borderRadius: '8px', 
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                    transform: 'translateY(-8px)',
+                                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                                }
+                            }}>
+                                <Box sx={{ fontSize: 60, mb: 3 }}>🚚</Box>
+                                <Typography variant="h6" component="h3" sx={{ fontWeight: 700, mb: 2, color: '#8B6F47', fontSize: '1.1rem' }}> Giao Hàng Toàn Quốc </Typography>
+                                <Typography sx={{ color: '#666', lineHeight: 1.8, fontSize: '0.95rem' }}> Miễn phí vận chuyển trên toàn quốc, lắp đặt tại nhà gần như tức thì. </Typography>
                             </Box>
                         </Grid>
                     </Grid>

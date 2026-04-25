@@ -46,7 +46,7 @@ const Header = () => {
     }, [accountMenuRef]);
 
     return (
-        <header className="bg-brand-soft/95 backdrop-blur-md sticky top-0 z-50 border-b border-brand-light shadow-sm">
+        <header className="bg-brand-soft sticky top-0 z-50 border-b border-brand-light shadow-md">
             <div className="container mx-auto px-4 py-3">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
@@ -69,7 +69,7 @@ const Header = () => {
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                                 placeholder="Tìm kiếm sản phẩm..."
-                                className="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm bg-brand-soft transition-all duration-300"
+                                className="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm bg-white transition-all duration-300"
                                 aria-label="Tìm kiếm sản phẩm"
                             />
                             <button 
@@ -228,7 +228,7 @@ const Header = () => {
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Tìm kiếm sản phẩm..."
-                            className="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-gray-50 transition-all duration-300"
+                            className="w-full py-2 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-white transition-all duration-300"
                             aria-label="Tìm kiếm sản phẩm"
                         />
                         <button 
